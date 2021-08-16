@@ -17,10 +17,45 @@ import os
 fileToLoad= os.path.join('Resources', 'election_results.csv')
     #save file to a path
 fileToSave = os.path.join('Analysis', 'election_analysis.txt')
+
+totalVotes = 0
+candidate_options = []
+candidate_votes = {}
+winner =" "
+winningCount = 0
+winningPercent = 0
+
     #open and read file
 with open(fileToLoad) as election_data:
     fileReader = csv.reader(election_data)
 
-    #readand print the header row
+    #read  the header row
     headers = next(fileReader)
-    print(headers)
+    #print each row
+    for row in fileReader:
+        totalVotes +=1 
+
+        #get candidate names and add to list
+        candidateName = row[2]
+        if candidateName not in candidate_options:
+            candidate_options.append(candidateName)
+            #track votes
+            candidate_votes[candidateName] = 0
+        candidate_votes[candidateName] +=1
+
+for candidateName in candidate_votes:
+    votes = candidate_votes[candidateName]
+    votePercent = float(votes) / float(totalVotes) * 100
+    print(f"{candidateName} received {votePercent:.2f}% of the vote.")
+    if (votes > winningCount) and (votePercent > winningPercent):
+        winningCount = votes
+        winningPercent = votePercent
+        winner = candidateName
+    #winner of the vote
+winning_candidate_summary = (
+    f"-------------------------\n"
+    f"Winner: {winner}\n"
+    f"Winning Vote Count: {winningCount:,}\n"
+    f"Winning Percentage: {winningPercent:.1f}%\n"
+    f"-------------------------\n")
+print(winning_candidate_summary)

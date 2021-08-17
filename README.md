@@ -1,4 +1,4 @@
-# electionanalysis
+# Election Analysis
 
 ## Overview
 Use Python code to process election data from three counties and decide the winning canidate. Program also recorded the total number of votes overall, for each canidate and county, the percentage of votes for each county and each canidate, as well as the county with the largest voter turnout. 

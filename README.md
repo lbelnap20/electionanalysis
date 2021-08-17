@@ -1,7 +1,7 @@
 # Election Analysis
 
 ## Overview
-Use Python code to process election data from three counties and decide the winning canidate. Program also recorded the total number of votes overall, for each canidate and county, the percentage of votes for each county and each canidate, as well as the county with the largest voter turnout. 
+Use Python code to process election data from three counties and decide the winning candidate. Program also recorded the total number of votes overall, for each candidate and county, the percentage of votes for each county and each candidate, as well as the county with the largest voter turnout. 
 
 ## Resources
 - Data source: [election_results.csv](https://github.com/lbelnap20/electionanalysis/tree/main/Resources)
